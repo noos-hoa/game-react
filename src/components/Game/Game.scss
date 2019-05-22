@@ -1,0 +1,13 @@
+.grid {
+  &-row {
+    display: flex;
+
+  }
+
+  &-column {
+    height: 80px;
+    border: 1px solid #fff;
+    flex-grow: 1;
+    cursor: pointer;
+  }
+}
