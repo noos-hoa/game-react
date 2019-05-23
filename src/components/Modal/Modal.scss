@@ -1,0 +1,11 @@
+.modal {
+  &.show {
+    display: block;
+  }
+  &-backdrop{
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+}

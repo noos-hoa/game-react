@@ -114,7 +114,17 @@ class Game extends Component {
     }
 
     showResults() {
+        let modalText = '';
+        if (this.state.scores.gamer > this.state.scores.pc) {
+            modalText = 'Congratulations, You are win';
+        } else {
+            modalText = 'Sorry, But you are lose';
+        }
+        this.setState({isShowModal: true, modalText});
+    }
 
+    handleCloseModal() {
+        this.setState({isShowModal: false});
     }
 
     resetData(callBack = () => {
@@ -197,7 +207,8 @@ class Game extends Component {
                         </div>
                     </footer>
                 </article>
-                <Modal isShow={this.state.isShowModal}/>
+                <Modal isShow={this.state.isShowModal} modalText={this.state.modalText}
+                       onCloseModal={(e) => this.handleCloseModal(e)}/>
             </div>
         );
     }
